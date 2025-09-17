@@ -1,0 +1,63 @@
+# Cloudflare Workers Configuration
+name = "vless-worker"
+main = "_worker.js"
+compatibility_date = "2024-01-17"
+compatibility_flags = ["nodejs_compat"]
+
+# Worker limits and configuration
+[limits]
+cpu_ms = 50
+
+# Environment configuration
+[env.production]
+name = "vless-worker"
+# Uncomment and configure custom route if you have a domain
+# route = { pattern = "vless.yourdomain.com/*", zone_name = "yourdomain.com" }
+
+[env.staging]
+name = "vless-worker-staging"
+
+[env.dev]
+name = "vless-worker-dev"
+
+# Environment Variables
+# Set these in Cloudflare Dashboard for security
+# Dashboard -> Workers -> Your Worker -> Settings -> Variables
+# [vars]
+# CUSTOM_UUID = "your-custom-uuid-here"
+# PROXY_IP = "preferred-proxy-ip"
+# SUB_DOMAIN = "your-subscription-domain"
+
+# KV Namespaces (for future features like user management)
+# [[kv_namespaces]]
+# binding = "VLESS_KV"
+# id = "your-kv-namespace-id"
+# preview_id = "your-preview-kv-namespace-id"
+
+# Durable Objects (for future features like connection management)
+# [[durable_objects.bindings]]
+# name = "CONNECTION_MANAGER"
+# class_name = "ConnectionManager"
+
+# Analytics Engine (for traffic analytics)
+# [[analytics_engine_datasets]]
+# binding = "VLESS_ANALYTICS"
+
+# D1 Database (for future user management features)
+# [[d1_databases]]
+# binding = "VLESS_DB"
+# database_name = "vless-users"
+# database_id = "your-d1-database-id"
+
+# R2 Storage (for future config backup features)
+# [[r2_buckets]]
+# binding = "VLESS_BUCKET"
+# bucket_name = "vless-configs"
+
+# Worker configuration
+[build]
+command = ""
+
+# Observability
+[observability]
+enabled = true
