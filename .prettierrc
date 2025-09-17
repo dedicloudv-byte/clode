@@ -1,0 +1,78 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true,
+    "worker": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "globals": {
+    "WebSocketPair": "readonly",
+    "connect": "readonly",
+    "Response": "readonly",
+    "Request": "readonly",
+    "URL": "readonly",
+    "ReadableStream": "readonly",
+    "WritableStream": "readonly",
+    "TransformStream": "readonly",
+    "TextDecoder": "readonly",
+    "TextEncoder": "readonly",
+    "atob": "readonly",
+    "btoa": "readonly",
+    "fetch": "readonly",
+    "AbortSignal": "readonly",
+    "crypto": "readonly"
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-console": "off",
+    "no-undef": "error",
+    "no-implicit-globals": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    "arrow-spacing": "error",
+    "block-spacing": "error",
+    "brace-style": ["error", "1tbs"],
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": "error",
+    "comma-style": "error",
+    "computed-property-spacing": "error",
+    "eol-last": "error",
+    "func-call-spacing": "error",
+    "key-spacing": "error",
+    "keyword-spacing": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2 }],
+    "no-trailing-spaces": "error",
+    "object-curly-spacing": ["error", "always"],
+    "space-before-blocks": "error",
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "space-in-parens": "error",
+    "space-infix-ops": "error",
+    "spaced-comment": "error"
+  },
+  "overrides": [
+    {
+      "files": ["_worker.js"],
+      "rules": {
+        "no-unused-vars": ["error", { 
+          "varsIgnorePattern": "^(userIDs|proxyIPs|addresses|addressesapi|addressesnotls|addressesnotlsapi|addressescsv|DLS|FileName|BotToken|ChatID|sub|subconverter|subconfig)$",
+          "argsIgnorePattern": "^(_|env|ctx)$"
+        }]
+      }
+    }
+  ]
+}
