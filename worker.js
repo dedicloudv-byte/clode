@@ -11,7 +11,7 @@ const userIDs = [
   'f47ac10b-58cc-4372-a567-0e02b2c3d479'
 ];
 
-const sub = 'sub.example.com'; // Subdomain untuk subscription (opsional)
+const sub = 'cb.agen.workers.dev'; // Subdomain untuk subscription (opsional)
 const subconverter = 'url.v1.mk'; // Subscription converter
 const subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini";
 
