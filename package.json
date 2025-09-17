@@ -1,0 +1,57 @@
+{
+  "name": "vless-worker",
+  "version": "3.0.0",
+  "description": "Production-ready VLESS proxy server for Cloudflare Workers with multi-UUID, global ProxyIP, and subscription support",
+  "main": "_worker.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "dev:local": "wrangler dev --local",
+    "test": "node test.js",
+    "lint": "eslint _worker.js",
+    "lint:fix": "eslint _worker.js --fix",
+    "format": "prettier --write _worker.js README.md",
+    "preview": "wrangler dev --remote",
+    "publish": "wrangler deploy --env production"
+  },
+  "keywords": [
+    "vless",
+    "proxy",
+    "cloudflare-workers",
+    "v2ray",
+    "websocket", 
+    "subscription",
+    "multi-uuid",
+    "proxyip",
+    "vpn",
+    "cdn",
+    "global",
+    "tls",
+    "encryption"
+  ],
+  "author": "VLESS Worker Team <team@vless-worker.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vless-worker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/vless-worker/issues"
+  },
+  "homepage": "https://github.com/yourusername/vless-worker#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240117.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "wrangler": "^3.28.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "_worker.js",
+    "wrangler.toml",
+    "README.md",
+    "LICENSE"
+  ]
+}
